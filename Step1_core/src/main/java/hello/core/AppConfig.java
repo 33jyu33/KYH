@@ -10,6 +10,9 @@ import hello.core.order.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+// 코드 상으로는 memberService(), orderService()에 의해 new MemoryMemberRepository()가 2번 호출되어야 한다.
+// 하지만 단 한 번만 실행되는데, 스프링 프레임워크의 @Configuration 을 통한 싱글톤 패턴 적용 때문이다.
+
 @Configuration
 public class AppConfig {
 
